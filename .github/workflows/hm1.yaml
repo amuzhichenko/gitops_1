@@ -1,0 +1,19 @@
+name: Check remote hosts and push reports
+
+on: [push]
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test self_hosted runner
+        run: echo "The ${{ github.repository }} repository will br cloned to the runner."
+      - uses: actions/checkout@v1
+      - name: Directoty structure
+        run: ls -la
+      - name: Add permissions to script
+        run: chmod +x hello.sh  
+      - name: Run test script
+        run: ./hello.sh
+      - name: Display hostname
+        run: hostname
+
