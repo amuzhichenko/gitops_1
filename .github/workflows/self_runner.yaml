@@ -1,0 +1,15 @@
+name: Check remote hosts and push reports
+
+on: [push]
+jobs:
+  build:
+    runs-on: [my_runner_ubuntu]
+    steps:
+      - name: Test self_hosted runner
+        run: echo "The ${{ github.repository }} repository will br cloned to the runner."
+      - uses: actions/checkout@v1
+      - name: Run test script
+        run: ls -lar
+      - name: Display hostname
+        run: hostname -a
+
