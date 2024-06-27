@@ -11,5 +11,5 @@ jobs:
       - name: Run test script
         run: ls -lar
       - name: Display hostname
-        run: hostname -a
+        run: hostname
 
